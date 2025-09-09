@@ -1976,6 +1976,24 @@ registers:
       datatype: "U16"
       unit: "W"
       models: ["SH10RT","SH10RT-V112","SH10RT-20","SH8.0RT","SH6.0RT","SH5.0RT","SH5.0RT-V112"]
+  ## Added for SG5.0RS
+    - name: "export_power_limitation"
+      level: 2
+      address: 31220
+      datatype: "U16"
+      models: ["SG5.0RS"]
+      datarange:
+        - response: 0xAA
+          value: "Enable"
+        - response: 0x55
+          value: "Disable"
+    - name: "export_power_limitation_value"
+      level: 2
+      address: 31221
+      datatype: "U16"
+      unit: "W"
+      scale: 10
+      models: ["SG5.0RS"] 
 scan: # these have to be 1 less than the first register
   - read:
     - start: 4949
